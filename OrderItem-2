@@ -1,0 +1,28 @@
+
+public class OrderItem {
+ private Product product;
+ private int quantity;
+ private double priceAtOrder;
+ public OrderItem(Product p, int q){
+     if(p==null)throw new IllegalArgumentException("Null product");
+     if(q<=0)throw new IllegalArgumentException("Qty must be>0");
+ this.product=p;
+ this.quantity=q;
+ this.priceAtOrder=p.getPrice();
+
+ }
+ public Product getProduct(){return product;}
+  public int getQuantity(){return quantity;}
+   public double getPriceAtOrder(){return priceAtOrder;}
+
+ public double getLineTotal(){
+     return priceAtOrder*quantity;
+ }
+
+    @Override
+    public String toString() {
+        return super.toString(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+ 
+ 
+}
